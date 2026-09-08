@@ -1,456 +1,225 @@
-//* Variables//
+// 1. Create variables
 
-// Create variables using var, let, and const.
+var studentName = "Rajesh";
+let initialStudentAge = 23;
+const collegeName = "Vemu Engineering College";
 
+// 2. Print all three values
 
-// Print all values.
-// Change the var value.
-// Change the let value.
-// Try changing the const value.
-// Try redeclaring each variable and observe what happens.
+console.log(studentName);
+console.log(initialStudentAge);
+console.log(collegeName);
 
+// 3. Change var value
+studentName = "Rajesh"; 
 
-// Print all values
+// 4. Change let value
+initialStudentAge = 23; 
 
+// 5. Try changing const value (This will throw a TypeError)
+// collegeName = "Vijayam University"; 
+// Error: Assignment to constant variable.
 
-var studentName = "karthik";
-let studentAge = 27;
-const collegeName = "Vemu";
-// console.log("Task2");
+// 6. Try redeclaring var variable (Allowed)
+var studentName = "Arun"; 
 
-console.log("student Name:", studentName);
-console.log("student Age:", studentAge);
-console.log("college Name:", collegeName);
+// 7. Try redeclaring let variable (This will throw a SyntaxError)
+// let studentAge = 25; 
+// Error: Identifier 'studentAge' has already been declared
 
-//change the var value//
+// Task 2 — User Information
 
-var studentName1 = "Vihaan";
-console.log("student Name:", studentName1);
+let name = prompt("Enter your Name:");
+let age = prompt("Enter your Age:");
+let city = prompt("Enter your City:");
 
-//change the let value//
+console.log("Name: " + name);
+console.log("Age: " + age);
+console.log("City: " + city);
 
-let studentAge1 = 25;
-console.log("student Age:", studentAge1);
+// Task 3 — Welcome Message
 
-//changing the const value//
+let userName = prompt("Enter your name:");
+alert("Welcome " + userName + "!");
 
-const collegeName1 = "NIVRS";
-console.log("college Name:", collegeName1)
-//redeclaring const variable "collegeName" gives an error, so renamed as "collegeName1"
+// Task 4 — Age Calculator
 
-// Try redeclaring each variable and observe what happens.
+let birthYear = prompt("Enter your birth year:");
+let currentYear = 2026; 
+let calculatedAge = currentYear - birthYear;
 
-var studentName = "satish"; // redeclaring var is allowed
-console.log("redeclared student Name:", studentName);
+console.log("Age: " + calculatedAge);
 
-let studentAge2 = 30; // redeclaring "studentName" let is not allowed, will throw an error,so used"studentAge2
-console.log("redeclared student Age:", studentAge2);
+// Data Type TasksTask 5 — Identify Data Types
 
-// 2 — Printing Statements
+let v1 = "Hello";
+let v2 = 100;
+let v3 = 25.5;
+let v4 = true;
+let v5 = false;
+let v6 = undefined;
+let v7 = null;
 
-// console.log()
-console.log("I am learning Javascript training");
+console.log(typeof v1); 
+console.log(typeof v2); 
+console.log(typeof v3); 
+console.log(typeof v4); "
+console.log(typeof v5); "
+console.log(typeof v6); ed"
+console.log(typeof v7); 
 
-// alert()
-alert("frontend training");
+// Task 6 — Student Data
 
-// confirm()
-confirm("Do you want to continue learning JS");
-
-// prompt()
-prompt("what is batch number of your training")
-
-// document.writeln()
-
-document.writeln("what is your batch number of JS training");
-
-// //Task-3: User details
-
-let Name =prompt("Enter Name:");
-let age = prompt("Enter age:");
-let city = prompt("Enter your city:");
-
-console.log("Task2");
-console.log("Name:", Name);
-console.log("age:", age);
-console.log("city:", city);
-
-// //Using prompt//
-let userName = prompt("Enter user name:");
-console.log("Task3");
-alert("Welcome karthik" + userName + "!");
-
-let BirthYear = Number(prompt("Enter your year:"));
-let currentYear = 2026;
-let presentAge = currentYear-BirthYear;
-console.log("Task4");
-console.log("Birth Year:", BirthYear);
-console.log("Age:", presentAge);
-
-// //DATA TYPES
-// // creating variables
-
-let num = 100;
-let str = "Hello";
-let bool = true;
-let undef;
-let nullVal = null;
-let obj = { name: "karthik", age: 27 };
-let arr = [1, 2, 3, 4, 5];
-
-console.log("Number:", typeof(num));
-console.log("String:", typeof(str));
-console.log("Boolean:", typeof(bool));
-console.log("Undefined:", typeof(undef));
-console.log("Null:", typeof(nullVal));
-console.log("Object:", typeof(obj));
-console.log("Array:", typeof(arr));
-
-// Task 5- Student Array
-
-let students = ["Arun", "Priya", "Kumar", "Divya", "Rahul"];
-    
-
-console.log("Student:", students[0]);
-console.log("Student:", students[1]);
-console.log("Student:", students[students.length-1]);
-
-let  studentsCount= students.length;
-console.log("Total Students:", studentsCount);
-
-//Employee object//
-let employee ={
-    name: "karthik",
-    age: 27,
-    role: "Frontend Developer",
-    skills: ["HTML", "CSS", "JavaScript"],
-    isWorking: true,
-    Qualification: ["BSC" , "B.Tech", "Computer Science"]
+let student = {
+    name: "Naveen",
+    age: 22,
+    city: "Trichy",
+    qualification: "B.E.",
+    isStudent: true
 };
 
-console.log(employee.name);
-console.log(employee.age);
-console.log(employee.role);
-console.log(employee.skills[0]);
-console.log(employee.Qualification[2]);
-console.log(employee.isWorking);
+console.log(student);                 
+console.log(student.name);            
+console.log(student.age);             
+console.log(student.qualification);   
+console.log(student.isStudent);  
 
-//Arithmetic operations - calculator
+// Task 7 — Fruit Array
 
-let a= 20;
-let b= 5;
+let fruits = ["Apple", "Mango", "Orange", "Banana", "Grapes", "Papaya"];
 
-console.log(a+b)
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
-console.log(a**b);
+console.log(fruits[0]);                   
+console.log(fruits[1]);                  
+console.log(fruits[fruits.length - 1]);   
+console.log(fruits.length); 
 
-//Task 8 Shopping Bill//
+// Arithmetic Operator
+// Task 8 — Basic Calculator
+
+let a = 20;
+let b = 5;
+
+console.log("Addition: " + (a + b));          
+console.log("Subtraction: " + (a - b));       
+console.log("Multiplication: " + (a * b));    
+console.log("Division: " + (a / b));          
+console.log("Modulus: " + (a % b));           
+console.log("Exponentiation: " + (a ** b));   
+
+// Task 9 — Shopping Bill
 
 let shirt = 999;
-let pant= 1499;
-let shoes= 1999;
-let bag= 799;
+let pant = 1499;
+let shoes = 1999;
 
-let totalBill = shirt + pant + shoes + bag;
-console.log("totalBill:", totalBill);
+let total = shirt + pant + shoes;
+console.log("Total = " + total); // 4497
 
-//Task 9 — Increment & Decrement
+// Task 10 — Simple Marks Calculation
 
-let x= 10;
-let y= x++;
-console.log(x);
-console.log(y);
+let tamil = 80;
+let english = 75;
+let maths = 90;
 
-let xx = 10;
-let yy = ++xx;
-console.log(xx);
-console.log(yy);
+let totalMarks = tamil + english + maths;
+let averageMarks = totalMarks / 3;
 
+console.log("Total marks: " + totalMarks);    // 245
+console.log("Average marks: " + averageMarks); // 81.666...
 
-let p = 10;
-let q = p--;
-console.log(p);
-console.log(q);
+// Increment & Decrement 
+// Task 11 — Post-Increment / Decrement Demonstration
 
-let pp = 10;
-let qq = --pp;
-console.log(pp);
-console.log(qq);
+let count = 10;
 
-//Task 10 — Assignment Operators//
+// Post-Increment: Uses the current value first, then increments
+console.log(count++); 
+console.log(count);   
 
-let assignmentNum = 10;
-assignmentNum += 5; 
-console.log(assignmentNum);
+// Post-Decrement: Uses the current value first, then decrements
+console.log(count--); 
+console.log(count);   
 
-assignmentNum -= 3;
-console.log(assignmentNum);
+// Pre-increment:
 
-assignmentNum *= 2;
-console.log(assignmentNum);
+let c = 10;
+let d = ++c; 
 
-assignmentNum /= 4;
-console.log(assignmentNum);
+console.log(a); 
+console.log(b); 
 
-assignmentNum %= 3;
-console.log(assignmentNum);
+// Pre Decrement
 
-assignmentNum **= 2;
-console.log(assignmentNum);
+let x = 20;
+let y = --x; 
 
-//comparision Operators//
+console.log(x); 
+console.log(y); 
 
-console.log(10>5);
-console.log(10<5);
-console.log(10>=10);
-console.log(10<=9);
+// Challenge TasksTask 15 —
+//  Find the Final Values
 
-console.log(5 == "5");
-console.log(5 === "5");
+let challengeA = 5;
+let challengeB = challengeA++; 
+let challengeC = ++challengeA; 
+let challengeD = challengeB--; 
 
-console.log(10 != "10");
-console.log(10 !== "10");
+console.log(challengeA); 
+console.log(challengeB); 
+console.log(challengeC); 
+console.log(challengeD); 
 
-//Logical Operators//
-//Task 12 - AND
+//Task 16 — Assignment Operators
 
-console.log(true && true);
-console.log(true && false);
-console.log(false && false);
-console.log (false && true);
+let num;
 
-//Task 13 - OR
+num = 10; num += 5;  console.log(num); 
+num = 10; num -= 5;  console.log(num); 
+num = 10; num *= 5;  console.log(num); 
+num = 10; num /= 5;  console.log(num); 
+num = 10; num %= 5;  console.log(num); 
+num = 10; num **= 5; console.log(num); 
 
-console.log(true || true);
-console.log (true || false);
-console.log(false || true);
-console.log( false || false);
+// Task 17 — Mini Student Profile
 
-//Task 14 - NOT
+// 1. Variables
+let studentName2 = "Vinod";
+let studentAge = 26;
+let studentCity = "Chennai";
+let studentCollege = "Tirumalai Engineering College";
 
-console.log(!true);
-console.log(!false);
+// 2. Array
+let favSubjects = ["Tamil", "English", "Maths", "Science", "History"];
 
-//Task 15 - combination
+// 3. Object
+let studentProfile = {
+    name: studentName,
+    age: studentAge,
+    city: studentCity,
+    college: studentCollege,
+    subjects: favSubjects,
+    isStudent: true
+};
 
-console.log(5 == "5" && !(5 === 5) || 6 > 7);
-console.log(7 === 7 && 10 != "10" || 5 >= 5);
-console.log(15 < 10 || 20 >15 && 5 == "5");
-console.log(15 < 10 || 20 > 15 && 5 == "5");
+// 4. Print Outputs
+console.log("Student name: " + studentProfile.name);
+console.log("Student age: " + studentProfile.age);
+console.log("City: " + studentProfile.city);
+console.log("First subject: " + studentProfile.subjects[0]);
+console.log("Last subject: " + studentProfile.subjects[studentProfile.subjects.length - 1]);
+console.log("Total subjects: " + studentProfile.subjects.length);
+console.log(studentProfile); // Complete object
 
-//Ternary Operator//
-//Task 16 - Voting
+// Final Challenge — User + Calculator
 
-let votingAge = 20;
-let votingStatus = votingAge >= 18 ? "Eligible to vote" : "Not eligible";
-console.log(votingStatus); 
 
-//Task 17 - password
+let num1 = Number(prompt("Enter the first number:"));
+let num2 = Number(prompt("Enter the second number:"));
 
-let password = true;
-let loginStatus = password ? "Login successful" : "Wrong password";
-console.log(loginStatus); 
-
-//Concatenation & Template String
-// Task 18 — User Introduction
-
-let name = "Naveen";
-let userAge = 25;
-let introductionCity = "Trichy";
-
-// Way 1: Using + operator
-console.log("My name is " + name + ". I am " + userAge + " years old. I live in " + introductionCity + ".");
-
-// Way 2: Using template literals ${}
-console.log(`My name is ${name}. I am ${userAge} years old. I live in ${introductionCity}.`);
-
-// Type Casting Tasks
-// Task 19 — String Conversion
-
-let val1 = String(100);
-let val2 = String(true);
-let val3 = String(undefined);
-let val4 = String(null);
-let val5 = String([1, 2]);
-
-console.log(val1, typeof val1); 
-console.log(val2, typeof val2); 
-console.log(val3, typeof val3); 
-console.log(val4, typeof val4); 
-console.log(val5, typeof val5); 
-
-//Task 20 — Number Conversion
-
-console.log(Number());          
-console.log(Number(""));        
-console.log(Number("123"));     
-console.log(Number("a1"));      
-console.log(Number(true));      
-console.log(Number(false));     
-console.log(Number(undefined));
-console.log(Number(null)); 
-
-//Task 21 — Boolean Conversion
-
-console.log(Boolean());          
-console.log(Boolean(""));         
-console.log(Boolean("hello"));  
-console.log(Boolean(123));      
-console.log(Boolean(true));     
-console.log(Boolean(false));    
-console.log(Boolean(undefined)); 
-console.log(Boolean(null));      
-console.log(Boolean([]));        
-console.log(Boolean({}));   
-
-// Flow Control Tasks
-// Task 22 — Voting Eligibility
-
-let checkAge = Number(prompt("Enter your age:"));
-
-if (checkAge >= 18) {
-    console.log("You can vote");
-} else {
-    console.log("You can't vote");
-}
-
-//Task 23 — Positive or Negative
-
-let signedNum = Number(prompt("Enter a number:"));
-
-if (signedNum > 0) {
-    console.log("Positive");
-} else if (signedNum < 0) {
-    console.log("Negative");
-} else {
-    console.log("Zero");
-}
-
-//Task 24 — Grade System
-
-let marks = Number(prompt("Enter your marks:"));
-
-if (marks >= 90 && marks <= 100) {
-    console.log("A Grade");
-} else if (marks >= 80 && marks < 90) {
-    console.log("B Grade");
-} else if (marks >= 70 && marks < 80) {
-    console.log("C Grade");
-} else if (marks >= 60 && marks < 70) {
-    console.log("D Grade");
-} else if (marks < 60) {
-    console.log("Fail");
-} else {
-    console.log("Invalid marks entered");
-}
-
-// Nested If Task
-// Task 25 — Job Eligibility
-
-let applicantAge = Number(prompt("Enter your age:"));
-let height = Number(prompt("Enter your height in cm:"));
-let weight = Number(prompt("Enter your weight in kg:"));
-
-if (applicantAge >= 18) {
-    if (height >= 160) {
-        if (weight >= 60) {
-            console.log("Congratulations! You are selected");
-        } else {
-            console.log("Rejected: Weight must be 60kg or above.");
-        }
-    } else {
-        console.log("Rejected: Height must be 160cm or above.");
-    }
-} else {
-    console.log("Rejected: Age must be 18 or older.");
-}
-
-//Switch Tasks
-// Task 26 — Traffic Light
-
-let lightColor = prompt("Enter traffic light color (red/yellow/green):").toLowerCase();
-
-switch (lightColor) {
-    case "red":
-        console.log("Stop");
-        break;
-    case "yellow":
-        console.log("Ready");
-        break;
-    case "green":
-        console.log("Go");
-        break;
-    default:
-        console.log("Invalid color");
-}
-
-//Task 27 — Day
-
-let day = 1;
-
-switch (day) {
-    case 1: console.log("Monday"); break;
-    case 2: console.log("Tuesday"); break;
-    case 3: console.log("Wednesday"); break;
-    case 4: console.log("Thursday"); break;
-    case 5: console.log("Friday"); break;
-    case 6: console.log("Saturday"); break;
-    case 7: console.log("Sunday"); break;
-    default: console.log("Invalid day");
-}
-
-//🏆 FINAL MINI PROJECT//
-//Task 28 — Student Result System//
-
-// Step 1 — Get user details
-let studentName = prompt("Enter Name:");
-let resultStudentAge = Number(prompt("Enter Age:"));
-let studentCity = prompt("Enter City:");
-
-// Step 2 — Get marks
-let tamil = Number(prompt("Enter Tamil Marks:"));
-let english = Number(prompt("Enter English Marks:"));
-let maths = Number(prompt("Enter Maths Marks:"));
-
-// Step 3 — Calculate
-let total = tamil + english + maths;
-let average = total / 3;
-
-// Step 4 — Check result (Grade)
-let grade;
-if (average >= 90) {
-    grade = "A";
-} else if (average >= 80) {
-    grade = "B";
-} else if (average >= 70) {
-    grade = "C";
-} else if (average >= 60) {
-    grade = "D";
-} else {
-    grade = "Fail";
-}
-
-
-// Step 5 — Check voting
-let votingEligibility = studentAge >= 18 ? "Eligible" : "Not Eligible";
-
-// Step 6 — Display 
-
-console.log(`
-Name: ${studentName}
-Age: ${studentAge}
-City: ${studentCity}
-Total: ${total}
-Average: ${average.toFixed(2)}
-Grade: ${grade}
-Voting: ${votingEligibility}
-`);
-
-
-
-
-
-
+// Perform calculations and display results
+console.log("Addition: " + (num1 + num2));
+console.log("Subtraction: " + (num1 - num2));
+console.log("Multiplication: " + (num1 * num2));
+console.log("Division: " + (num1 / num2));
+console.log("Modulus: " + (num1 % num2));
+console.log("Power: " + (num1 ** num2));
