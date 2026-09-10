@@ -1,456 +1,454 @@
-//* Variables//
+// Task 1 — Student Result Analyzer
 
-// Create variables using var, let, and const.
+// Function to analyze student marks
 
-
-// Print all values.
-// Change the var value.
-// Change the let value.
-// Try changing the const value.
-// Try redeclaring each variable and observe what happens.
-
-
-// Print all values
-
-
-var studentName = "karthik";
-let studentAge = 27;
-const collegeName = "Vemu";
-// console.log("Task2");
-
-console.log("student Name:", studentName);
-console.log("student Age:", studentAge);
-console.log("college Name:", collegeName);
-
-//change the var value//
-
-var studentName1 = "Vihaan";
-console.log("student Name:", studentName1);
-
-//change the let value//
-
-let studentAge1 = 25;
-console.log("student Age:", studentAge1);
-
-//changing the const value//
-
-const collegeName1 = "NIVRS";
-console.log("college Name:", collegeName1)
-//redeclaring const variable "collegeName" gives an error, so renamed as "collegeName1"
-
-// Try redeclaring each variable and observe what happens.
-
-var studentName = "satish"; // redeclaring var is allowed
-console.log("redeclared student Name:", studentName);
-
-let studentAge2 = 30; // redeclaring "studentName" let is not allowed, will throw an error,so used"studentAge2
-console.log("redeclared student Age:", studentAge2);
-
-// 2 — Printing Statements
-
-// console.log()
-console.log("I am learning Javascript training");
-
-// alert()
-alert("frontend training");
-
-// confirm()
-confirm("Do you want to continue learning JS");
-
-// prompt()
-prompt("what is batch number of your training")
-
-// document.writeln()
-
-document.writeln("what is your batch number of JS training");
-
-// //Task-3: User details
-
-let Name =prompt("Enter Name:");
-let age = prompt("Enter age:");
-let city = prompt("Enter your city:");
-
-console.log("Task2");
-console.log("Name:", Name);
-console.log("age:", age);
-console.log("city:", city);
-
-// //Using prompt//
-let userName = prompt("Enter user name:");
-console.log("Task3");
-alert("Welcome karthik" + userName + "!");
-
-let BirthYear = Number(prompt("Enter your year:"));
-let currentYear = 2026;
-let presentAge = currentYear-BirthYear;
-console.log("Task4");
-console.log("Birth Year:", BirthYear);
-console.log("Age:", presentAge);
-
-// //DATA TYPES
-// // creating variables
-
-let num = 100;
-let str = "Hello";
-let bool = true;
-let undef;
-let nullVal = null;
-let obj = { name: "karthik", age: 27 };
-let arr = [1, 2, 3, 4, 5];
-
-console.log("Number:", typeof(num));
-console.log("String:", typeof(str));
-console.log("Boolean:", typeof(bool));
-console.log("Undefined:", typeof(undef));
-console.log("Null:", typeof(nullVal));
-console.log("Object:", typeof(obj));
-console.log("Array:", typeof(arr));
-
-// Task 5- Student Array
-
-let students = ["Arun", "Priya", "Kumar", "Divya", "Rahul"];
+function analyzeStudentResult(name, department, marks) {
     
+    const totalMarks = marks.reduce((sum, mark) => sum + mark, 0);
+    const average = totalMarks / marks.length;
+    let isPassed = true;
+    let grade = "";
 
-console.log("Student:", students[0]);
-console.log("Student:", students[1]);
-console.log("Student:", students[students.length-1]);
+    // To check if student failed any individual subject (<50 fail)
+    for (let mark of marks) {
+        if (mark < 50) {
+            isPassed = false;
+        }
+    }
 
-let  studentsCount= students.length;
-console.log("Total Students:", studentsCount);
+    if (!isPassed || average < 50) {
+        isPassed = false;
+        grade = "Fail";
+    } else if (average >= 90) {
+        grade = "A";
+    } else if (average >= 75) {
+        grade = "B";
+    } else if (average >= 60) {
+        grade = "C";
+    } else {
+        grade = "D";
+    }
 
-//Employee object//
-let employee ={
-    name: "karthik",
-    age: 27,
-    role: "Frontend Developer",
-    skills: ["HTML", "CSS", "JavaScript"],
-    isWorking: true,
-    Qualification: ["BSC" , "B.Tech", "Computer Science"]
+    // result
+   
+    console.log("     STUDENT RESULT    ");
+    console.log(`Name       : ${name}`);
+    console.log(`Department : ${department}`);
+    console.log(`Marks      : ${marks.join(", ")}`);
+    console.log(`Total Marks: ${totalMarks}`);
+    console.log(`Average    : ${average.toFixed(2)}`);
+    console.log(`Status     : ${isPassed ? "PASSED" : "FAILED"}`);
+    console.log(`Grade      : ${grade}`);
+    console.log("====================================\n");
+}
+
+// Execution
+analyzeStudentResult("Rahul", "Computer Science", [85, 92, 78, 88, 95]);
+
+// Task 2 — Employee Salary Calculator
+
+// Employee Object
+
+const employee = {
+    name: "Arun",
+    role: "Developer",
+    salary: 45000,
+    experience: 2
 };
 
-console.log(employee.name);
-console.log(employee.age);
-console.log(employee.role);
-console.log(employee.skills[0]);
-console.log(employee.Qualification[2]);
-console.log(employee.isWorking);
+// Function to calculate final salary
+function calculateSalary(emp) {
+    let basicSalary = emp.salary;
+    let bonusPercentage = 0;
 
-//Arithmetic operations - calculator
-
-let a= 20;
-let b= 5;
-
-console.log(a+b)
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
-console.log(a**b);
-
-//Task 8 Shopping Bill//
-
-let shirt = 999;
-let pant= 1499;
-let shoes= 1999;
-let bag= 799;
-
-let totalBill = shirt + pant + shoes + bag;
-console.log("totalBill:", totalBill);
-
-//Task 9 — Increment & Decrement
-
-let x= 10;
-let y= x++;
-console.log(x);
-console.log(y);
-
-let xx = 10;
-let yy = ++xx;
-console.log(xx);
-console.log(yy);
-
-
-let p = 10;
-let q = p--;
-console.log(p);
-console.log(q);
-
-let pp = 10;
-let qq = --pp;
-console.log(pp);
-console.log(qq);
-
-//Task 10 — Assignment Operators//
-
-let assignmentNum = 10;
-assignmentNum += 5; 
-console.log(assignmentNum);
-
-assignmentNum -= 3;
-console.log(assignmentNum);
-
-assignmentNum *= 2;
-console.log(assignmentNum);
-
-assignmentNum /= 4;
-console.log(assignmentNum);
-
-assignmentNum %= 3;
-console.log(assignmentNum);
-
-assignmentNum **= 2;
-console.log(assignmentNum);
-
-//comparision Operators//
-
-console.log(10>5);
-console.log(10<5);
-console.log(10>=10);
-console.log(10<=9);
-
-console.log(5 == "5");
-console.log(5 === "5");
-
-console.log(10 != "10");
-console.log(10 !== "10");
-
-//Logical Operators//
-//Task 12 - AND
-
-console.log(true && true);
-console.log(true && false);
-console.log(false && false);
-console.log (false && true);
-
-//Task 13 - OR
-
-console.log(true || true);
-console.log (true || false);
-console.log(false || true);
-console.log( false || false);
-
-//Task 14 - NOT
-
-console.log(!true);
-console.log(!false);
-
-//Task 15 - combination
-
-console.log(5 == "5" && !(5 === 5) || 6 > 7);
-console.log(7 === 7 && 10 != "10" || 5 >= 5);
-console.log(15 < 10 || 20 >15 && 5 == "5");
-console.log(15 < 10 || 20 > 15 && 5 == "5");
-
-//Ternary Operator//
-//Task 16 - Voting
-
-let votingAge = 20;
-let votingStatus = votingAge >= 18 ? "Eligible to vote" : "Not eligible";
-console.log(votingStatus); 
-
-//Task 17 - password
-
-let password = true;
-let loginStatus = password ? "Login successful" : "Wrong password";
-console.log(loginStatus); 
-
-//Concatenation & Template String
-// Task 18 — User Introduction
-
-let name = "Naveen";
-let userAge = 25;
-let introductionCity = "Trichy";
-
-// Way 1: Using + operator
-console.log("My name is " + name + ". I am " + userAge + " years old. I live in " + introductionCity + ".");
-
-// Way 2: Using template literals ${}
-console.log(`My name is ${name}. I am ${userAge} years old. I live in ${introductionCity}.`);
-
-// Type Casting Tasks
-// Task 19 — String Conversion
-
-let val1 = String(100);
-let val2 = String(true);
-let val3 = String(undefined);
-let val4 = String(null);
-let val5 = String([1, 2]);
-
-console.log(val1, typeof val1); 
-console.log(val2, typeof val2); 
-console.log(val3, typeof val3); 
-console.log(val4, typeof val4); 
-console.log(val5, typeof val5); 
-
-//Task 20 — Number Conversion
-
-console.log(Number());          
-console.log(Number(""));        
-console.log(Number("123"));     
-console.log(Number("a1"));      
-console.log(Number(true));      
-console.log(Number(false));     
-console.log(Number(undefined));
-console.log(Number(null)); 
-
-//Task 21 — Boolean Conversion
-
-console.log(Boolean());          
-console.log(Boolean(""));         
-console.log(Boolean("hello"));  
-console.log(Boolean(123));      
-console.log(Boolean(true));     
-console.log(Boolean(false));    
-console.log(Boolean(undefined)); 
-console.log(Boolean(null));      
-console.log(Boolean([]));        
-console.log(Boolean({}));   
-
-// Flow Control Tasks
-// Task 22 — Voting Eligibility
-
-let checkAge = Number(prompt("Enter your age:"));
-
-if (checkAge >= 18) {
-    console.log("You can vote");
-} else {
-    console.log("You can't vote");
-}
-
-//Task 23 — Positive or Negative
-
-let signedNum = Number(prompt("Enter a number:"));
-
-if (signedNum > 0) {
-    console.log("Positive");
-} else if (signedNum < 0) {
-    console.log("Negative");
-} else {
-    console.log("Zero");
-}
-
-//Task 24 — Grade System
-
-let marks = Number(prompt("Enter your marks:"));
-
-if (marks >= 90 && marks <= 100) {
-    console.log("A Grade");
-} else if (marks >= 80 && marks < 90) {
-    console.log("B Grade");
-} else if (marks >= 70 && marks < 80) {
-    console.log("C Grade");
-} else if (marks >= 60 && marks < 70) {
-    console.log("D Grade");
-} else if (marks < 60) {
-    console.log("Fail");
-} else {
-    console.log("Invalid marks entered");
-}
-
-// Nested If Task
-// Task 25 — Job Eligibility
-
-let applicantAge = Number(prompt("Enter your age:"));
-let height = Number(prompt("Enter your height in cm:"));
-let weight = Number(prompt("Enter your weight in kg:"));
-
-if (applicantAge >= 18) {
-    if (height >= 160) {
-        if (weight >= 60) {
-            console.log("Congratulations! You are selected");
-        } else {
-            console.log("Rejected: Weight must be 60kg or above.");
-        }
-    } else {
-        console.log("Rejected: Height must be 160cm or above.");
+    // Conditionals based on experience
+    if (emp.experience >= 5) {
+        bonusPercentage = 0.15; // 15% Bonus
+    } else if (emp.experience >= 2) {
+        bonusPercentage = 0.10; // 10% Bonus
     }
-} else {
-    console.log("Rejected: Age must be 18 or older.");
+
+    let bonusAmount = basicSalary * bonusPercentage;
+    let finalSalary = basicSalary + bonusAmount;
+
+    // result
+    console.log("     EMPLOYEE SALARY CALCULATOR     ");
+    console.log(`Employee Name : ${emp.name}`);
+    console.log(`Role          : ${emp.role}`);
+    console.log(`Experience    : ${emp.experience} years`);
+    console.log(`Basic Salary  : ₹${basicSalary}`);
+    console.log(`Bonus Applied : ${bonusPercentage * 100}% (₹${bonusAmount})`);
+    console.log(`Final Salary  : ₹${finalSalary}`);
+    console.log("====================================\n");
 }
 
-//Switch Tasks
-// Task 26 — Traffic Light
+// Execution
+calculateSalary(employee);
 
-let lightColor = prompt("Enter traffic light color (red/yellow/green):").toLowerCase();
 
-switch (lightColor) {
-    case "red":
-        console.log("Stop");
-        break;
-    case "yellow":
-        console.log("Ready");
-        break;
-    case "green":
-        console.log("Go");
-        break;
-    default:
-        console.log("Invalid color");
+// Task 3 — Product Filter System
+
+let products = [
+    { name: "Laptop", price: 55000, category: "electronics" },
+    { name: "Mouse", price: 800, category: "electronics" },
+    { name: "Shirt", price: 1200, category: "fashion" },
+    { name: "Shoes", price: 2500, category: "fashion" },
+    { name: "Phone", price: 30000, category: "electronics" }
+];
+
+console.log("       PRODUCT FILTER SYSTEM        ");
+
+// 1. Get products above ₹2,000
+const expensiveProducts = products.filter(p => p.price > 2000);
+console.log("1. Products above ₹2,000:", expensiveProducts);
+
+// 2. Get only electronics
+const electronics = products.filter(p => p.category === "electronics");
+console.log("\n2. Electronics Only:", electronics);
+
+// 3. Find the first product below ₹1,000
+const cheapProduct = products.find(p => p.price < 1000);
+console.log("\n3. First product below ₹1,000:", cheapProduct);
+
+// 4. Calculate total price of all products
+const totalPrice = products.reduce((total, p) => total + p.price, 0);
+console.log(`\n4. Total price of all products: ₹${totalPrice}`);
+
+// 5. Check whether any product costs more than ₹50,000
+const hasVeryExpensive = products.some(p => p.price > 50000);
+console.log(`\n5. Any product > ₹50,000?: ${hasVeryExpensive}`);
+
+// 6. Check whether every product has a price above ₹500
+const allAbove500 = products.every(p => p.price > 500);
+console.log(`\n6. Every product > ₹500?: ${allAbove500}`);
+console.log("====================================\n");
+
+
+// Task 4 — Employee Management
+
+// Array of 6 employees
+let employees = [
+    { id: 101, name: "Karthik", role: "Frontend Developer", salary: 40000 },
+    { id: 102, name: "Rekha", role: "Backend Developer", salary: 48000 },
+    { id: 103, name: "Soorya", role: "DevOps Engineer", salary: 55000 },
+    { id: 104, name: "Kiran", role: "UI/UX Designer", salary: 38000 },
+    { id: 105, name: "Kumar", role: "QA Engineer", salary: 42000 },
+    { id: 106, name: "Chandru", role: "Project Manager", salary: 70000 }
+];
+
+console.log("        EMPLOYEE MANAGEMENT         ");
+
+// 1. Display all employee names
+console.log("1. All Employee Names:");
+employees.forEach(emp => console.log(` - ${emp.name}`));
+
+// 2. Display employees earning above ₹40,000
+const highEarners = employees.filter(emp => emp.salary > 40000);
+console.log("\n2. Employees earning above ₹40,000:", highEarners);
+
+// 3. Find employee with ID 103
+const emp103 = employees.find(emp => emp.id === 103);
+console.log("\n3. Employee with ID 103:", emp103);
+
+// 4.  total salary
+const totalSalaryPool = employees.reduce((total, emp) => total + emp.salary, 0);
+console.log(`\n4. Total Salary of all employees: ₹${totalSalaryPool}`);
+
+// 5. Find highest-paid employee
+const highestPaid = employees.reduce((max, emp) => emp.salary > max.salary ? emp : max, employees[0]);
+console.log("\n5. Highest-Paid Employee:", highestPaid);
+
+// 6. Sort employees from highest salary to lowest
+
+const sortedEmployees = [...employees].sort((a, b) => b.salary - a.salary);
+console.log("\n6. Employees sorted by Salary (Highest to Lowest):", sortedEmployees);
+
+// 7. New array containing only employee names
+const nameOnlyArray = employees.map(emp => emp.name);
+console.log("\n7. Array of names only:", nameOnlyArray);
+console.log("====================================");
+
+
+// Task 5 — Shopping Cart
+
+// 1. cart array
+let cart = [
+    { name: "Laptop", price: 50000, quantity: 1 },
+    { name: "Mouse", price: 1000, quantity: 2 },
+    { name: "Keyboard", price: 2000, quantity: 1 }
+];
+
+// 2. calculateCart function
+
+function calculateCart(cartArray) {
+    console.log("--- Item Totals ---");
+    cartArray.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        console.log(`${item.name}: ₹${itemTotal} (${item.price} x ${item.quantity})`);
+    });
+
+    //  total cart value using reduce()
+    let totalCartValue = cartArray.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    console.log(`\nInitial Total Cart Value: ₹${totalCartValue}`);
+
+    // Apply 10% discount if total > ₹50,000
+    let discount = 0;
+    if (totalCartValue > 50000) {
+        discount = totalCartValue * 0.10;
+        console.log(`10% Discount Applied: -₹${discount}`);
+    } else {
+        console.log("No discount applied (Total is not above ₹50,000)");
+    }
+
+    //  final payable amount
+    let finalPayable = totalCartValue - discount;
+    console.log(`Final Payable Amount: ₹${finalPayable}`);
+
+    return finalPayable;
 }
 
-//Task 27 — Day
+// Execute the function
+calculateCart(cart);
 
-let day = 1;
+// Task 6 — Student Search System
 
-switch (day) {
-    case 1: console.log("Monday"); break;
-    case 2: console.log("Tuesday"); break;
-    case 3: console.log("Wednesday"); break;
-    case 4: console.log("Thursday"); break;
-    case 5: console.log("Friday"); break;
-    case 6: console.log("Saturday"); break;
-    case 7: console.log("Sunday"); break;
-    default: console.log("Invalid day");
+// 1. Array of students
+let students = [
+    { name: "Arun", age: 21, mark: 85 },
+    { name: "Priya", age: 22, mark: 92 },
+    { name: "Karthi", age: 20, mark: 67 },
+    { name: "Dinesh", age: 23, mark: 45 }
+];
+
+// 2. Display all student names
+console.log("All Student Names:");
+students.forEach(student => console.log(student.name));
+
+// 3. Display students who scored above 80
+console.log("\nStudents scoring above 80:");
+let highScorers = students.filter(student => student.mark > 80);
+console.log(highScorers);
+
+// 4. Find student named "Priya"
+console.log('\nFinding student "Priya":');
+let priya = students.find(student => student.name === "Priya");
+console.log(priya);
+
+// 5. Calculate average mark
+let totalMarks = students.reduce((sum, student) => sum + student.mark, 0);
+let averageMark = totalMarks / students.length;
+console.log(`\nAverage Mark: ${averageMark}`);
+
+// 6. Check whether anyone failed (assuming passing mark is 50)
+let anyoneFailed = students.some(student => student.mark < 50);
+console.log(`\nDid anyone fail? (Mark < 50): ${anyoneFailed}`);
+
+// 7. Check whether everyone scored above 40
+let everyoneAbove40 = students.every(student => student.mark > 40);
+console.log(`Did everyone score above 40?: ${everyoneAbove40}`);
+
+// 8. Sort students by marks (Highest to Lowest) using slice()
+
+let sortedStudents = students.slice().sort((a, b) => b.mark - a.mark);
+console.log("\nStudents sorted by marks (Highest to Lowest):");
+console.log(sortedStudents);
+
+
+// Task 7 — Array Transformation Challenge
+
+// Given array
+let numbers = [12 , 5, 8, 21, 44, 7, 30, 15];
+
+// 1. Create a new array containing numbers × 2
+let doubled = numbers.map(num => num * 2);
+console.log("Numbers x 2:", doubled);
+
+// 2. Get only even numbers
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log("Even numbers:", evenNumbers);
+
+// 3. Get numbers greater than 15
+let greaterThan15 = numbers.filter(num => num > 15);
+console.log("Numbers > 15:", greaterThan15);
+
+// 4. Find the first number greater than 20
+let firstGreaterThan20 = numbers.find(num => num > 20);
+console.log("First number > 20:", firstGreaterThan20);
+
+// 5. Find total of all numbers
+let totalSum = numbers.reduce((sum, num) => sum + num, 0);
+console.log("Total of all numbers:", totalSum);
+
+// 6. Check whether any number is greater than 40
+let anyGreaterThan40 = numbers.some(num => num > 40);
+console.log("Is any number > 40?:", anyGreaterThan40);
+
+// 7. Check whether every number is positive
+let everyNumberPositive = numbers.every(num => num > 0);
+console.log("Is every number positive?:", everyNumberPositive);
+
+// 8. Sort from highest to lowest
+let sortedHighestToLowest = numbers.slice().sort((a, b) => b - a);
+console.log("Sorted highest to lowest:", sortedHighestToLowest);
+
+
+// Task 8 — String Analyzer
+
+// 1. Ask the user to enter a sentence
+let sentence = prompt("Enter a sentence:") || "I am using Javascript to learn programming."; 
+console.log(`Original Sentence: "${sentence}"\n`);
+
+// 2. Total characters
+console.log("Total characters:", sentence.length);
+
+// 3. Uppercase sentence
+console.log("Uppercase sentence:", sentence.toUpperCase());
+
+// 4. Lowercase sentence
+console.log("Lowercase sentence:", sentence.toLowerCase());
+
+// 5. Whether it contains "JavaScript"
+console.log("Contains 'JavaScript'?:", sentence.includes("JavaScript"));
+
+// 6. First character
+console.log("First character:", sentence.charAt(0)); // Or sentence[0]
+
+// 7. Last character
+console.log("Last character:", sentence.slice(-1));
+
+// 8. Number of words
+
+let wordCount = sentence.trim().split(/\s+/).length;
+console.log("Number of words:", wordCount);
+
+// 9. Replace "JavaScript" with "Python"
+console.log("Replaced sentence:", sentence.replace("JavaScript", "Python"));
+
+// 10. Convert sentence into an array using split()
+let sentenceArray = sentence.split(" ");
+console.log("Sentence converted to array:", sentenceArray);
+
+
+
+/*Final Mini Project — Employee Dashboard
+This would be a good intermediate-level class project.
+Create an Employee Dashboard using JavaScript.*/
+
+
+// --- 1. INITIAL DATA SETUP ---
+let employeess = [
+    { id: 101, name: "Arun", department: "IT", salary: 45000, experience: 2 },
+    { id: 102, name: "Priya", department: "HR", salary: 50000, experience: 4 },
+    { id: 103, name: "Karthi", department: "IT", salary: 65000, experience: 6 }
+];
+
+// --- 2. FUNCTIONS ---
+
+// 1. Employee List: Display all employees
+
+function displayEmployees(employeeList = employees) {
+    console.log(`\n--- Showing ${employeeList.length} Employee(s) ---`);
+    if (employeeList.length === 0) {
+        console.log("No employees found.");
+        return;
+    }
+    employeeList.forEach(emp => {
+        console.log(`ID: ${emp.id} | Name: ${emp.name} | Dept: ${emp.department} | Salary: ₹${emp.salary} | Exp: ${emp.experience} yrs`);
+    });
 }
 
-//🏆 FINAL MINI PROJECT//
-//Task 28 — Student Result System//
+// 2. Search: Search employee by name
 
-// Step 1 — Get user details
-let studentName = prompt("Enter Name:");
-let resultStudentAge = Number(prompt("Enter Age:"));
-let studentCity = prompt("Enter City:");
+function searchByName(nameQuery) {
+    console.log(`\n🔍 Searching for name: "${nameQuery}"`);
+    let results = employees.filter(emp => 
+        emp.name.toLowerCase().includes(nameQuery.toLowerCase())
+    );
+    displayEmployees(results);
+}
 
-// Step 2 — Get marks
-let tamil = Number(prompt("Enter Tamil Marks:"));
-let english = Number(prompt("Enter English Marks:"));
-let maths = Number(prompt("Enter Maths Marks:"));
+// 3. Department Filter: Filter employees by department
 
-// Step 3 — Calculate
-let total = tamil + english + maths;
-let average = total / 3;
+function filterByDepartment(dept) {
+    console.log(`\n📁 Filtering by Department: "${dept}"`);
+    let results = employees.filter(emp => 
+        emp.department?.toUpperCase() === dept.toUpperCase()
+    );
+    displayEmployees(results);
+}
 
-// Step 4 — Check result (Grade)
-let grade;
-if (average >= 90) {
-    grade = "A";
-} else if (average >= 80) {
-    grade = "B";
-} else if (average >= 70) {
-    grade = "C";
-} else if (average >= 60) {
-    grade = "D";
-} else {
-    grade = "Fail";
+// 4. Salary Filter: Show employees earning > ₹50,000
+
+function showHighEarners() {
+    console.log(`\n💰 Employees earning more than ₹50,000:`);
+    let results = employees.filter(emp => emp.salary > 50000);
+    displayEmployees(results);
+}
+
+// 5. Salary Calculation: Calculate total company salary
+
+function calculateTotalSalary() {
+    return employees.reduce((total, emp) => total + emp.salary, 0);
+}
+
+// 6. Highest Salary: Find the highest-paid employee object
+
+function getHighestPaidEmployee() {
+    return employees.reduce((highest, current) => 
+        current.salary > highest.salary ? current : highest
+    , employees[0]);
+}
+
+// 7. Experience : Find employees with more than 3 years' experience
+
+function showExperiencedEmployees() {
+    console.log(`\n⏳ Employees with > 3 years experience:`);
+    let results = employees.filter(emp => emp.experience > 3);
+    displayEmployees(results);
+}
+
+// 8. Sorting: Sort employees by salary 
+function sortEmployeesBySalary(direction = "lowToHigh") {
+    console.log(`\n🔄 Sorting employees by salary: [${direction}]`);
+    let sorted = [...employees]; 
+    
+    if (direction === "lowToHigh") {
+        sorted.sort((a, b) => a.salary - b.salary);
+    } else if (direction === "highToLow") {
+        sorted.sort((a, b) => b.salary - a.salary);
+    }
+    displayEmployees(sorted);
+}
+
+// 9. Statistics: Display dashboard statistics
+
+function displayDashboardStats() {
+    let totalEmployees = employees.length;
+    let totalSalary = calculateTotalSalary();
+    let highestPaid = getHighestPaidEmployee();
+    let averageSalary = Math.round(totalSalary / totalEmployees);
+
+    console.log("\n📊 === DASHBOARD STATISTICS ===");
+    console.log(`Total Employees : ${totalEmployees}`);
+    console.log(`Total Salary    : ₹${totalSalary}`);
+    console.log(`Highest Salary  : ₹${highestPaid.salary} (${highestPaid.name})`);
+    console.log(`Average Salary  : ₹${averageSalary}`);
 }
 
 
-// Step 5 — Check voting
-let votingEligibility = studentAge >= 18 ? "Eligible" : "Not Eligible";
+// Display full list initially
+console.log("--- Initial Dashboard State ---");
+displayEmployees();
 
-// Step 6 — Display 
+// Test Search and Filtering features
+searchByName("pri");
+filterByDepartment("IT");
+showHighEarners();
+showExperiencedEmployees();
 
-console.log(`
-Name: ${studentName}
-Age: ${studentAge}
-City: ${studentCity}
-Total: ${total}
-Average: ${average.toFixed(2)}
-Grade: ${grade}
-Voting: ${votingEligibility}
-`);
+// Test Sorting features
+sortEmployeesBySalary("lowToHigh");
+sortEmployeesBySalary("highToLow");
 
-
-
-
-
-
+// Display Final Summary Statistics
+displayDashboardStats();
