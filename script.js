@@ -111,32 +111,34 @@ NaN     // "hello" cannot be converted into a valid number
 false   // 0 is a falsy value
 true    // Any non-empty string is a truthy value
 
-/* Q17: What is NaN? Give an example.
+// Q17: What is NaN? Give an example.
 
-NaN stands for Not-a-Number. It represents a value that is an invalid numerical result resulting from an erroneous mathematical operation.
-•	Example: let result = "Hello" * 5; // Result is NaN
+// NaN stands for Not-a-Number. It represents a value that is an invalid numerical result resulting from an erroneous mathematical operation.
+// •	Example: let result = "Hello" * 5; // Result is NaN
 
-________________________________________
-Conditional Statements 
+// ________________________________________
+// Conditional Statements 
 
-Q18: What is the difference between if-else and switch?
+// Q18: What is the difference between if-else and switch?
 
-•	if-else: Evaluates complex conditional expressions, ranges (e.g., x > 10 && x < 20), and boolean states.
+// •	if-else: Evaluates complex conditional expressions, ranges (e.g., x > 10 && x < 20), and boolean states.
 
-•	switch: Evaluates a single expression against multiple fixed, discrete values (cases) for exact matching. It is often cleaner than deeply nested if-else chains.
-Q19: What will be the output?
-Output: "Adult"
-•	Reason: The variable age is 20, which satisfies the conditional clause age >= 18.
+// •	switch: Evaluates a single expression against multiple fixed, discrete values (cases) for exact matching. It is often cleaner than deeply nested if-else chains.
+// Q19: What will be the output?
+// Output: "Adult"
+// •	Reason: The variable age is 20, which satisfies the conditional clause age >= 18.
 
-Q20: What is nested if? Give an example.
+// Q20: What is a nested if statement? Give an example.Answer:A nested if statement is an if statement that is placed entirely inside the block of another if statement. This allows you to test multiple conditions sequentially; the inner condition is evaluated only if the outer condition is true.
 
-A nested if is an if statement placed completely inside the block of another if statement. */
+let hasCard = true;
+let hasPin = true;
 
 if (hasCard) {
     if (hasPin) {
         console.log("Transaction Approved");
     }
 }
+
 
 // Q21: Write a program to check if a number is even or odd using ternary operator.
 
@@ -219,9 +221,9 @@ Q29: What is an arrow function?
  Q30: What will be the output? */
 
 Output: "Hello"
-•	Reason: The function greet() executes and returns the string "Hello", which is saved in message and printed.
+// •	Reason: The function greet() executes and returns the string "Hello", which is saved in message and printed.
 
- Executable JavaScript File (script.js)
+//  Executable JavaScript File (script.js)
 
 
 
@@ -306,9 +308,9 @@ for(let i = 1; i <= 5; i++) {
 }
 
 console.log("\n--- Q25: Sum from 1 to 100 ---");
-let totalSum = 0;
+let totalSumvalue = 0;
 for(let i = 1; i <= 100; i++) {
-    totalSum += i;
+    totalSumvalue += i;
 }
 console.log(`Sum of 1 to 100 is: ${totalSum}`); // Output: 5050
 
@@ -316,7 +318,7 @@ console.log(`Sum of 1 to 100 is: ${totalSum}`); // Output: 5050
 // Arrays
 
 console.log("\n--- Q27 Code Output ---");
-let arr =;
+let arr = [1, 2, 3];
 arr.push(4);
 arr.pop();
 arr.unshift(0);
