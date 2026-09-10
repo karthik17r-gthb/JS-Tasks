@@ -1,456 +1,339 @@
-//* Variables//
 
-// Create variables using var, let, and const.
+/*Variables & Data Types (Questions 1-8)
 
+Q1: What is the difference between var, let, and const?
 
-// Print all values.
-// Change the var value.
-// Change the let value.
-// Try changing the const value.
-// Try redeclaring each variable and observe what happens.
+•	var: Function-scoped. It can be re-declared and updated. It gets hoisted and initialized as undefined.
+•	let: Block-scoped (bounded by {}). It can be updated but not re-declared within the same block. It is hoisted to the Temporal Dead Zone (TDZ).
+•	const: Block-scoped. It cannot be updated or re-declared. It must be initialized immediately at the time of declaration.
 
 
-// Print all values
+Q2: Can you re-declare a variable with var? What about let and const?
+•	Yes, you can re-declare variables with var as many times as you want.
+•	No, you cannot re-declare variables with let or const within the same scope block; doing so throws a SyntaxError..
 
 
-var studentName = "karthik";
-let studentAge = 27;
-const collegeName = "Vemu";
-// console.log("Task2");
+Q3: What is the output of this code?
+Output: TypeError: Assignment to constant variable.
+•	Reason: The code crashes at z = 30; because z is declared as a const and its value cannot be re-assigned. If z were not changed, it would have logged 20 25 15.
 
-console.log("student Name:", studentName);
-console.log("student Age:", studentAge);
-console.log("college Name:", collegeName);
 
-//change the var value//
+Q4: What is the difference between declaring and initializing a variable?
+•	Declaring: Reserving a variable name in memory without giving it a value (e.g., let x;).
+•	Initializing: Assigning an initial value to that declared variable for the first time (e.g., x = 5;).
 
-var studentName1 = "Vihaan";
-console.log("student Name:", studentName1);
 
-//change the let value//
+Q5: What will be the output?
+Output: undefined
+•	Reason: When you declare a variable using let or var but do not assign it a value, JavaScript automatically initializes it with a default value of undefined.
 
-let studentAge1 = 25;
-console.log("student Age:", studentAge1);
 
-//changing the const value//
+Q6: What is hoisting? Give an example.
+Hoisting is JavaScript's default behavior of moving declarations to the top of their current scope before execution.
+•	Example with var */
 
-const collegeName1 = "NIVRS";
-console.log("college Name:", collegeName1)
-//redeclaring const variable "collegeName" gives an error, so renamed as "collegeName1"
+console.log(myVar); // Outputs: undefined 
+var myVar = 10;
 
-// Try redeclaring each variable and observe what happens.
 
-var studentName = "satish"; // redeclaring var is allowed
-console.log("redeclared student Name:", studentName);
+// Q7: What is the difference between null and undefined?undefined: Means a variable has been declared but has not yet been assigned a value. It is a default state.null: An intentional assignment value representing the complete absence of any object value. It is explicitly set by the developer.
+// 
 
-let studentAge2 = 30; // redeclaring "studentName" let is not allowed, will throw an error,so used"studentAge2
-console.log("redeclared student Age:", studentAge2);
+// Q8: What will be the output? Output:
 
-// 2 — Printing Statements
+"object"
+"undefined"
+"object"
+"object"
 
-// console.log()
-console.log("I am learning Javascript training");
+// Operators ==========
 
-// alert()
-alert("frontend training");
+/* Q9: What is the difference between == and ===?
 
-// confirm()
-confirm("Do you want to continue learning JS");
+• (Abstract Equality): Compares only values by performing implicit type conversion (coercion) before evaluating (e.g., 5 == "5" is true).
+•	(Strict Equality): Compares both values and data types without converting them (e.g., 5 === "5" is false).
 
-// prompt()
-prompt("what is batch number of your training")
 
-// document.writeln()
+Q10: What is the difference between ++i and i++?
 
-document.writeln("what is your batch number of JS training");
+•	++i (Prefix): Increments the value of i by 1 first, and then returns the newly updated value.
+•	i++ (Postfix): Returns the current value of i first, and then increments i by 1 in the background.
 
-// //Task-3: User details
 
-let Name =prompt("Enter Name:");
-let age = prompt("Enter age:");
-let city = prompt("Enter your city:");
+Q11: What will be the output? */
+// Output:
 
-console.log("Task2");
-console.log("Name:", Name);
-console.log("age:", age);
-console.log("city:", city);
+"105" // Addition (+) string concatenation as 'y' is a string
+5     // Subtraction (-) forces string "5" to implicitly convert to number 5
+50    // Multiplication (*) forces string implicit conversion
+2     // Division (/) forces string implicit conversion
 
-// //Using prompt//
-let userName = prompt("Enter user name:");
-console.log("Task3");
-alert("Welcome karthik" + userName + "!");
 
-let BirthYear = Number(prompt("Enter your year:"));
-let currentYear = 2026;
-let presentAge = currentYear-BirthYear;
-console.log("Task4");
-console.log("Birth Year:", BirthYear);
-console.log("Age:", presentAge);
+// Q12: What are logical operators? Explain with examples.
 
-// //DATA TYPES
-// // creating variables
+// Logical operators are used to determine the logic between variables or values:
+// •	&& (AND): Returns true only if all conditions are true. (e.g., true && false outputs false).
+// •	|| (OR): Returns true if at least one condition is true. (e.g., true || false outputs true).
+// •	! (NOT): Reverses the boolean state. (e.g., !true outputs false).
 
-let num = 100;
-let str = "Hello";
-let bool = true;
-let undef;
-let nullVal = null;
-let obj = { name: "karthik", age: 27 };
-let arr = [1, 2, 3, 4, 5];
 
-console.log("Number:", typeof(num));
-console.log("String:", typeof(str));
-console.log("Boolean:", typeof(bool));
-console.log("Undefined:", typeof(undef));
-console.log("Null:", typeof(nullVal));
-console.log("Object:", typeof(obj));
-console.log("Array:", typeof(arr));
+// Q13: What will be the output?
+// Output:
 
-// Task 5- Student Array
-
-let students = ["Arun", "Priya", "Kumar", "Divya", "Rahul"];
-    
+true  // (5 > 3 is true) AND (10 > 5 is true)
+true  // (5 > 10 is false) OR (10 > 5 is true)
+false // NOT (5 > 3 is true) -> turns into false
 
-console.log("Student:", students[0]);
-console.log("Student:", students[1]);
-console.log("Student:", students[students.length-1]);
 
-let  studentsCount= students.length;
-console.log("Total Students:", studentsCount);
+/*Q14: What is the ternary operator? Give an example.
 
-//Employee object//
-let employee ={
-    name: "karthik",
-    age: 27,
-    role: "Frontend Developer",
-    skills: ["HTML", "CSS", "JavaScript"],
-    isWorking: true,
-    Qualification: ["BSC" , "B.Tech", "Computer Science"]
-};
+The ternary operator is a shorthand for an if-else statement. It takes three operands: a condition, an expression to execute if true, and an expression to execute if false.
+•	Syntax: condition ? expressionIfTrue : expressionIfFalse;
+•	Example: let access = (age >= 18) ? "Allowed" : "Denied";
 
-console.log(employee.name);
-console.log(employee.age);
-console.log(employee.role);
-console.log(employee.skills[0]);
-console.log(employee.Qualification[2]);
-console.log(employee.isWorking);
 
-//Arithmetic operations - calculator
 
-let a= 20;
-let b= 5;
+//  Type Casting 
 
-console.log(a+b)
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
-console.log(a**b);
+/*Q15: What is the difference between implicit and explicit type casting?
 
-//Task 8 Shopping Bill//
+•	Implicit (Coercion): Done automatically by the JavaScript engine behind the scenes (e.g., 10 - "5" outputs 5).
+•	Explicit (Conversion): Done manually by the developer using built-in functions (e.g., Number("123") or String(5))*/
 
-let shirt = 999;
-let pant= 1499;
-let shoes= 1999;
-let bag= 799;
 
-let totalBill = shirt + pant + shoes + bag;
-console.log("totalBill:", totalBill);
+// Q16: What will be the output?
+// Output:
 
-//Task 9 — Increment & Decrement
+123     // String converted to a valid number
+NaN     // "hello" cannot be converted into a valid number
+1       // true converts to 1
+0       // false converts to 0
+false   // 0 is a falsy value
+true    // Any non-empty string is a truthy value
 
-let x= 10;
-let y= x++;
-console.log(x);
-console.log(y);
+/* Q17: What is NaN? Give an example.
 
-let xx = 10;
-let yy = ++xx;
-console.log(xx);
-console.log(yy);
+NaN stands for Not-a-Number. It represents a value that is an invalid numerical result resulting from an erroneous mathematical operation.
+•	Example: let result = "Hello" * 5; // Result is NaN
 
+________________________________________
+Conditional Statements 
 
-let p = 10;
-let q = p--;
-console.log(p);
-console.log(q);
+Q18: What is the difference between if-else and switch?
 
-let pp = 10;
-let qq = --pp;
-console.log(pp);
-console.log(qq);
+•	if-else: Evaluates complex conditional expressions, ranges (e.g., x > 10 && x < 20), and boolean states.
 
-//Task 10 — Assignment Operators//
+•	switch: Evaluates a single expression against multiple fixed, discrete values (cases) for exact matching. It is often cleaner than deeply nested if-else chains.
+Q19: What will be the output?
+Output: "Adult"
+•	Reason: The variable age is 20, which satisfies the conditional clause age >= 18.
 
-let assignmentNum = 10;
-assignmentNum += 5; 
-console.log(assignmentNum);
+Q20: What is nested if? Give an example.
 
-assignmentNum -= 3;
-console.log(assignmentNum);
+A nested if is an if statement placed completely inside the block of another if statement. */
 
-assignmentNum *= 2;
-console.log(assignmentNum);
-
-assignmentNum /= 4;
-console.log(assignmentNum);
-
-assignmentNum %= 3;
-console.log(assignmentNum);
-
-assignmentNum **= 2;
-console.log(assignmentNum);
-
-//comparision Operators//
-
-console.log(10>5);
-console.log(10<5);
-console.log(10>=10);
-console.log(10<=9);
-
-console.log(5 == "5");
-console.log(5 === "5");
-
-console.log(10 != "10");
-console.log(10 !== "10");
-
-//Logical Operators//
-//Task 12 - AND
-
-console.log(true && true);
-console.log(true && false);
-console.log(false && false);
-console.log (false && true);
-
-//Task 13 - OR
-
-console.log(true || true);
-console.log (true || false);
-console.log(false || true);
-console.log( false || false);
-
-//Task 14 - NOT
-
-console.log(!true);
-console.log(!false);
-
-//Task 15 - combination
-
-console.log(5 == "5" && !(5 === 5) || 6 > 7);
-console.log(7 === 7 && 10 != "10" || 5 >= 5);
-console.log(15 < 10 || 20 >15 && 5 == "5");
-console.log(15 < 10 || 20 > 15 && 5 == "5");
-
-//Ternary Operator//
-//Task 16 - Voting
-
-let votingAge = 20;
-let votingStatus = votingAge >= 18 ? "Eligible to vote" : "Not eligible";
-console.log(votingStatus); 
-
-//Task 17 - password
-
-let password = true;
-let loginStatus = password ? "Login successful" : "Wrong password";
-console.log(loginStatus); 
-
-//Concatenation & Template String
-// Task 18 — User Introduction
-
-let name = "Naveen";
-let userAge = 25;
-let introductionCity = "Trichy";
-
-// Way 1: Using + operator
-console.log("My name is " + name + ". I am " + userAge + " years old. I live in " + introductionCity + ".");
-
-// Way 2: Using template literals ${}
-console.log(`My name is ${name}. I am ${userAge} years old. I live in ${introductionCity}.`);
-
-// Type Casting Tasks
-// Task 19 — String Conversion
-
-let val1 = String(100);
-let val2 = String(true);
-let val3 = String(undefined);
-let val4 = String(null);
-let val5 = String([1, 2]);
-
-console.log(val1, typeof val1); 
-console.log(val2, typeof val2); 
-console.log(val3, typeof val3); 
-console.log(val4, typeof val4); 
-console.log(val5, typeof val5); 
-
-//Task 20 — Number Conversion
-
-console.log(Number());          
-console.log(Number(""));        
-console.log(Number("123"));     
-console.log(Number("a1"));      
-console.log(Number(true));      
-console.log(Number(false));     
-console.log(Number(undefined));
-console.log(Number(null)); 
-
-//Task 21 — Boolean Conversion
-
-console.log(Boolean());          
-console.log(Boolean(""));         
-console.log(Boolean("hello"));  
-console.log(Boolean(123));      
-console.log(Boolean(true));     
-console.log(Boolean(false));    
-console.log(Boolean(undefined)); 
-console.log(Boolean(null));      
-console.log(Boolean([]));        
-console.log(Boolean({}));   
-
-// Flow Control Tasks
-// Task 22 — Voting Eligibility
-
-let checkAge = Number(prompt("Enter your age:"));
-
-if (checkAge >= 18) {
-    console.log("You can vote");
-} else {
-    console.log("You can't vote");
-}
-
-//Task 23 — Positive or Negative
-
-let signedNum = Number(prompt("Enter a number:"));
-
-if (signedNum > 0) {
-    console.log("Positive");
-} else if (signedNum < 0) {
-    console.log("Negative");
-} else {
-    console.log("Zero");
-}
-
-//Task 24 — Grade System
-
-let marks = Number(prompt("Enter your marks:"));
-
-if (marks >= 90 && marks <= 100) {
-    console.log("A Grade");
-} else if (marks >= 80 && marks < 90) {
-    console.log("B Grade");
-} else if (marks >= 70 && marks < 80) {
-    console.log("C Grade");
-} else if (marks >= 60 && marks < 70) {
-    console.log("D Grade");
-} else if (marks < 60) {
-    console.log("Fail");
-} else {
-    console.log("Invalid marks entered");
-}
-
-// Nested If Task
-// Task 25 — Job Eligibility
-
-let applicantAge = Number(prompt("Enter your age:"));
-let height = Number(prompt("Enter your height in cm:"));
-let weight = Number(prompt("Enter your weight in kg:"));
-
-if (applicantAge >= 18) {
-    if (height >= 160) {
-        if (weight >= 60) {
-            console.log("Congratulations! You are selected");
-        } else {
-            console.log("Rejected: Weight must be 60kg or above.");
-        }
-    } else {
-        console.log("Rejected: Height must be 160cm or above.");
+if (hasCard) {
+    if (hasPin) {
+        console.log("Transaction Approved");
     }
+}
+
+// Q21: Write a program to check if a number is even or odd using ternary operator.
+
+let num = 7;
+let checkType = (num % 2 === 0) ? "Even" : "Odd";
+console.log(checkType); // Outputs: "Odd"
+
+
+// Loops
+
+/*Q22: What is the difference between while and do-while?
+
+•	while: Checks the evaluation condition first. If the condition is false initially, the block of code inside never executes.
+•	do-while: Executes the code block once first, and then evaluates the condition. It guarantees the loop runs at least once.
+
+
+Q23: What will be the output? */
+
+Output:
+1
+2
+3
+4
+5
+
+/* Q24: What is the difference between for-of and for-in?
+
+•	for...of: Iterates over the values of an iterable object like an Array, String, or Set.
+•	for...in: Iterates over the enumerable property keys of an Object.
+
+
+Q25: Write a program to find sum of numbers from 1 to 100.*/
+
+let totalSum = 0;
+for (let i = 1; i <= 100; i++) {
+    totalSum += i;
+}
+console.log(totalSum); // Outputs: 5050
+
+// Arrays
+
+// Q26: What is the difference between slice and splice?
+
+// •	slice(): Returns a shallow copy of a portion of an array into a new array object. It does not modify the original array.
+// •	splice(): Changes the contents of an array by removing, replacing, or adding elements. It directly modifies the original array.
+
+
+// Q27: What will be the output?
+
+Output: [ 1, 2, 3 ]
+
+// •	Step-by-step breakdown:
+// 1.	let arr = [1, 2, 3]; ➔ [1, 2, 3]
+// 2.	arr.push(4); ➔ Adds 4 to end: [1, 2, 3, 4]
+// 3.	arr.pop(); ➔ Removes 4 from end: [1, 2, 3]
+// 4.	arr.unshift(0); ➔ Adds 0 to start: [0, 1, 2, 3]
+// 5.	arr.shift(); ➔ Removes 0 from start: [1, 2, 3]
+
+
+//  Functions
+
+
+/* Q28: What is the difference between function declaration and function expression?
+
+•	Function Declaration: Defined with a name statement. They are fully hoisted, meaning you can call them before they are declared in the code file.
+
+function sayHi() { return "Hi"; }
+
+Function Expression: A function is assigned inside a variable. They are not hoisted as executable functions and cannot be called early.
+
+let sayHi = function() { return "Hi"; };
+
+
+Q29: What is an arrow function?
+ Give an example.An arrow function is a shorter, cleaner syntax introduced in ES6 to write functions. They do not have their own this binding context.
+ 
+ Example
+ const double = (n) => n * 2;
+
+ Q30: What will be the output? */
+
+Output: "Hello"
+•	Reason: The function greet() executes and returns the string "Hello", which is saved in message and printed.
+
+ Executable JavaScript File (script.js)
+
+
+
+// ==========================================
+// Variables & Data Types
+// ==========================================
+
+console.log("--- Q3 Code Output ---");
+var x = 5;
+let y = 10;
+const z = 15;
+x = 20;
+y = 25;
+// z = 30; Assignment to constant variable. 
+// Commenting out the crashing line above to allow the rest of the script to run cleanly.
+console.log(x, y, z); // Output: 20 25 15
+
+console.log("\n--- Q5 Code Output ---");
+let a;
+console.log(a); // Output: undefined
+
+console.log("\n--- Q8 Code Output ---");
+console.log(typeof null);      // Output: "object"
+console.log(typeof undefined); // Output: "undefined"
+console.log(typeof []);        // Output: "object"
+console.log(typeof {});        // Output: "object"
+
+
+// Operators
+
+console.log("\n--- Q11 Code Output ---");
+let opX = 10;
+let opY = "5";
+console.log(opX + opY); // Output: "105"
+console.log(opX - opY); // Output: 5
+console.log(opX * opY); // Output: 50
+console.log(opX / opY); // Output: 2
+
+console.log("Code Output");
+console.log(5 > 3 && 10 > 5); // Output: true
+console.log(5 > 10 || 10 > 5); // Output: true
+console.log(!(5 > 3));         // Output: false
+
+console.log("Ternary Shorthand Example");
+let userAge = 21;
+let accessGranted = (userAge >= 18) ? "Allowed Access" : "Denied Access";
+console.log(accessGranted);
+
+
+// Type Casting
+
+console.log("\n--- Q16 Code Output ---");
+console.log(Number("123"));   // Output: 123
+console.log(Number("hello")); // Output: NaN
+console.log(Number(true));    // Output: 1
+console.log(Number(false));   // Output: 0
+console.log(Boolean(0));      // Output: false
+console.log(Boolean("hello"));// Output: true
+
+
+// Conditional Statements
+
+console.log("\n--- Q19 Code Output ---");
+let age = 20;
+if(age >= 18) {
+    console.log("Adult");
 } else {
-    console.log("Rejected: Age must be 18 or older.");
+    console.log("Minor");
 }
 
-//Switch Tasks
-// Task 26 — Traffic Light
+console.log("\n--- Q21: Even/Odd via Ternary Operator ---");
+let checkNumber = 7;
+let evenOrOdd = (checkNumber % 2 === 0) ? "Even" : "Odd";
+console.log(`The number ${checkNumber} is ${evenOrOdd}.`);
 
-let lightColor = prompt("Enter traffic light color (red/yellow/green):").toLowerCase();
 
-switch (lightColor) {
-    case "red":
-        console.log("Stop");
-        break;
-    case "yellow":
-        console.log("Ready");
-        break;
-    case "green":
-        console.log("Go");
-        break;
-    default:
-        console.log("Invalid color");
+//  Loops
+
+console.log("\n--- Q23 Code Output ---");
+for(let i = 1; i <= 5; i++) {
+    console.log(i);
 }
 
-//Task 27 — Day
-
-let day = 1;
-
-switch (day) {
-    case 1: console.log("Monday"); break;
-    case 2: console.log("Tuesday"); break;
-    case 3: console.log("Wednesday"); break;
-    case 4: console.log("Thursday"); break;
-    case 5: console.log("Friday"); break;
-    case 6: console.log("Saturday"); break;
-    case 7: console.log("Sunday"); break;
-    default: console.log("Invalid day");
+console.log("\n--- Q25: Sum from 1 to 100 ---");
+let totalSum = 0;
+for(let i = 1; i <= 100; i++) {
+    totalSum += i;
 }
+console.log(`Sum of 1 to 100 is: ${totalSum}`); // Output: 5050
 
-//🏆 FINAL MINI PROJECT//
-//Task 28 — Student Result System//
 
-// Step 1 — Get user details
-let studentName = prompt("Enter Name:");
-let resultStudentAge = Number(prompt("Enter Age:"));
-let studentCity = prompt("Enter City:");
+// Arrays
 
-// Step 2 — Get marks
-let tamil = Number(prompt("Enter Tamil Marks:"));
-let english = Number(prompt("Enter English Marks:"));
-let maths = Number(prompt("Enter Maths Marks:"));
+console.log("\n--- Q27 Code Output ---");
+let arr =;
+arr.push(4);
+arr.pop();
+arr.unshift(0);
+arr.shift();
+console.log(arr); // Output: [1, 2, 3]
 
-// Step 3 — Calculate
-let total = tamil + english + maths;
-let average = total / 3;
 
-// Step 4 — Check result (Grade)
-let grade;
-if (average >= 90) {
-    grade = "A";
-} else if (average >= 80) {
-    grade = "B";
-} else if (average >= 70) {
-    grade = "C";
-} else if (average >= 60) {
-    grade = "D";
-} else {
-    grade = "Fail";
+// Functions
+
+console.log("\n--- Q29: Arrow Function Example ---");
+const multiplyNumbers = (num1, num2) => num1 * num2;
+console.log(`Multiplication Result: ${multiplyNumbers(4, 5)}`);
+
+console.log("\n--- Q30 Code Output ---");
+function greet() {
+    return "Hello";
 }
-
-
-// Step 5 — Check voting
-let votingEligibility = studentAge >= 18 ? "Eligible" : "Not Eligible";
-
-// Step 6 — Display 
-
-console.log(`
-Name: ${studentName}
-Age: ${studentAge}
-City: ${studentCity}
-Total: ${total}
-Average: ${average.toFixed(2)}
-Grade: ${grade}
-Voting: ${votingEligibility}
-`);
-
-
-
-
-
+let message = greet();
+console.log(message); // Output: "Hello"
 
