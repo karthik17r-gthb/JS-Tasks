@@ -1,456 +1,306 @@
-//* Variables//
+// Task 1 — Product API & Array Methods
 
-// Create variables using var, let, and const.
+const API_URL = 'https://fakestoreapi.com/products';
 
-
-// Print all values.
-// Change the var value.
-// Change the let value.
-// Try changing the const value.
-// Try redeclaring each variable and observe what happens.
-
-
-// Print all values
-
-
-var studentName = "karthik";
-let studentAge = 27;
-const collegeName = "Vemu";
-// console.log("Task2");
-
-console.log("student Name:", studentName);
-console.log("student Age:", studentAge);
-console.log("college Name:", collegeName);
-
-//change the var value//
-
-var studentName1 = "Vihaan";
-console.log("student Name:", studentName1);
-
-//change the let value//
-
-let studentAge1 = 25;
-console.log("student Age:", studentAge1);
-
-//changing the const value//
-
-const collegeName1 = "NIVRS";
-console.log("college Name:", collegeName1)
-//redeclaring const variable "collegeName" gives an error, so renamed as "collegeName1"
-
-// Try redeclaring each variable and observe what happens.
-
-var studentName = "satish"; // redeclaring var is allowed
-console.log("redeclared student Name:", studentName);
-
-let studentAge2 = 30; // redeclaring "studentName" let is not allowed, will throw an error,so used"studentAge2
-console.log("redeclared student Age:", studentAge2);
-
-// 2 — Printing Statements
-
-// console.log()
-console.log("I am learning Javascript training");
-
-// alert()
-alert("frontend training");
-
-// confirm()
-confirm("Do you want to continue learning JS");
-
-// prompt()
-prompt("what is batch number of your training")
-
-// document.writeln()
-
-document.writeln("what is your batch number of JS training");
-
-// //Task-3: User details
-
-let Name =prompt("Enter Name:");
-let age = prompt("Enter age:");
-let city = prompt("Enter your city:");
-
-console.log("Task2");
-console.log("Name:", Name);
-console.log("age:", age);
-console.log("city:", city);
-
-// //Using prompt//
-let userName = prompt("Enter user name:");
-console.log("Task3");
-alert("Welcome karthik" + userName + "!");
-
-let BirthYear = Number(prompt("Enter your year:"));
-let currentYear = 2026;
-let presentAge = currentYear-BirthYear;
-console.log("Task4");
-console.log("Birth Year:", BirthYear);
-console.log("Age:", presentAge);
-
-// //DATA TYPES
-// // creating variables
-
-let num = 100;
-let str = "Hello";
-let bool = true;
-let undef;
-let nullVal = null;
-let obj = { name: "karthik", age: 27 };
-let arr = [1, 2, 3, 4, 5];
-
-console.log("Number:", typeof(num));
-console.log("String:", typeof(str));
-console.log("Boolean:", typeof(bool));
-console.log("Undefined:", typeof(undef));
-console.log("Null:", typeof(nullVal));
-console.log("Object:", typeof(obj));
-console.log("Array:", typeof(arr));
-
-// Task 5- Student Array
-
-let students = ["Arun", "Priya", "Kumar", "Divya", "Rahul"];
-    
-
-console.log("Student:", students[0]);
-console.log("Student:", students[1]);
-console.log("Student:", students[students.length-1]);
-
-let  studentsCount= students.length;
-console.log("Total Students:", studentsCount);
-
-//Employee object//
-let employee ={
-    name: "karthik",
-    age: 27,
-    role: "Frontend Developer",
-    skills: ["HTML", "CSS", "JavaScript"],
-    isWorking: true,
-    Qualification: ["BSC" , "B.Tech", "Computer Science"]
-};
-
-console.log(employee.name);
-console.log(employee.age);
-console.log(employee.role);
-console.log(employee.skills[0]);
-console.log(employee.Qualification[2]);
-console.log(employee.isWorking);
-
-//Arithmetic operations - calculator
-
-let a= 20;
-let b= 5;
-
-console.log(a+b)
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
-console.log(a%b);
-console.log(a**b);
-
-//Task 8 Shopping Bill//
-
-let shirt = 999;
-let pant= 1499;
-let shoes= 1999;
-let bag= 799;
-
-let totalBill = shirt + pant + shoes + bag;
-console.log("totalBill:", totalBill);
-
-//Task 9 — Increment & Decrement
-
-let x= 10;
-let y= x++;
-console.log(x);
-console.log(y);
-
-let xx = 10;
-let yy = ++xx;
-console.log(xx);
-console.log(yy);
-
-
-let p = 10;
-let q = p--;
-console.log(p);
-console.log(q);
-
-let pp = 10;
-let qq = --pp;
-console.log(pp);
-console.log(qq);
-
-//Task 10 — Assignment Operators//
-
-let assignmentNum = 10;
-assignmentNum += 5; 
-console.log(assignmentNum);
-
-assignmentNum -= 3;
-console.log(assignmentNum);
-
-assignmentNum *= 2;
-console.log(assignmentNum);
-
-assignmentNum /= 4;
-console.log(assignmentNum);
-
-assignmentNum %= 3;
-console.log(assignmentNum);
-
-assignmentNum **= 2;
-console.log(assignmentNum);
-
-//comparision Operators//
-
-console.log(10>5);
-console.log(10<5);
-console.log(10>=10);
-console.log(10<=9);
-
-console.log(5 == "5");
-console.log(5 === "5");
-
-console.log(10 != "10");
-console.log(10 !== "10");
-
-//Logical Operators//
-//Task 12 - AND
-
-console.log(true && true);
-console.log(true && false);
-console.log(false && false);
-console.log (false && true);
-
-//Task 13 - OR
-
-console.log(true || true);
-console.log (true || false);
-console.log(false || true);
-console.log( false || false);
-
-//Task 14 - NOT
-
-console.log(!true);
-console.log(!false);
-
-//Task 15 - combination
-
-console.log(5 == "5" && !(5 === 5) || 6 > 7);
-console.log(7 === 7 && 10 != "10" || 5 >= 5);
-console.log(15 < 10 || 20 >15 && 5 == "5");
-console.log(15 < 10 || 20 > 15 && 5 == "5");
-
-//Ternary Operator//
-//Task 16 - Voting
-
-let votingAge = 20;
-let votingStatus = votingAge >= 18 ? "Eligible to vote" : "Not eligible";
-console.log(votingStatus); 
-
-//Task 17 - password
-
-let password = true;
-let loginStatus = password ? "Login successful" : "Wrong password";
-console.log(loginStatus); 
-
-//Concatenation & Template String
-// Task 18 — User Introduction
-
-let name = "Naveen";
-let userAge = 25;
-let introductionCity = "Trichy";
-
-// Way 1: Using + operator
-console.log("My name is " + name + ". I am " + userAge + " years old. I live in " + introductionCity + ".");
-
-// Way 2: Using template literals ${}
-console.log(`My name is ${name}. I am ${userAge} years old. I live in ${introductionCity}.`);
-
-// Type Casting Tasks
-// Task 19 — String Conversion
-
-let val1 = String(100);
-let val2 = String(true);
-let val3 = String(undefined);
-let val4 = String(null);
-let val5 = String([1, 2]);
-
-console.log(val1, typeof val1); 
-console.log(val2, typeof val2); 
-console.log(val3, typeof val3); 
-console.log(val4, typeof val4); 
-console.log(val5, typeof val5); 
-
-//Task 20 — Number Conversion
-
-console.log(Number());          
-console.log(Number(""));        
-console.log(Number("123"));     
-console.log(Number("a1"));      
-console.log(Number(true));      
-console.log(Number(false));     
-console.log(Number(undefined));
-console.log(Number(null)); 
-
-//Task 21 — Boolean Conversion
-
-console.log(Boolean());          
-console.log(Boolean(""));         
-console.log(Boolean("hello"));  
-console.log(Boolean(123));      
-console.log(Boolean(true));     
-console.log(Boolean(false));    
-console.log(Boolean(undefined)); 
-console.log(Boolean(null));      
-console.log(Boolean([]));        
-console.log(Boolean({}));   
-
-// Flow Control Tasks
-// Task 22 — Voting Eligibility
-
-let checkAge = Number(prompt("Enter your age:"));
-
-if (checkAge >= 18) {
-    console.log("You can vote");
-} else {
-    console.log("You can't vote");
-}
-
-//Task 23 — Positive or Negative
-
-let signedNum = Number(prompt("Enter a number:"));
-
-if (signedNum > 0) {
-    console.log("Positive");
-} else if (signedNum < 0) {
-    console.log("Negative");
-} else {
-    console.log("Zero");
-}
-
-//Task 24 — Grade System
-
-let marks = Number(prompt("Enter your marks:"));
-
-if (marks >= 90 && marks <= 100) {
-    console.log("A Grade");
-} else if (marks >= 80 && marks < 90) {
-    console.log("B Grade");
-} else if (marks >= 70 && marks < 80) {
-    console.log("C Grade");
-} else if (marks >= 60 && marks < 70) {
-    console.log("D Grade");
-} else if (marks < 60) {
-    console.log("Fail");
-} else {
-    console.log("Invalid marks entered");
-}
-
-// Nested If Task
-// Task 25 — Job Eligibility
-
-let applicantAge = Number(prompt("Enter your age:"));
-let height = Number(prompt("Enter your height in cm:"));
-let weight = Number(prompt("Enter your weight in kg:"));
-
-if (applicantAge >= 18) {
-    if (height >= 160) {
-        if (weight >= 60) {
-            console.log("Congratulations! You are selected");
-        } else {
-            console.log("Rejected: Weight must be 60kg or above.");
-        }
-    } else {
-        console.log("Rejected: Height must be 160cm or above.");
+fetch(API_URL)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-} else {
-    console.log("Rejected: Age must be 18 or older.");
+    return response.json();
+  })
+  .then(products => {
+    // 1. Display: Product title, Price, Category
+    console.log("===== ALL PRODUCTS =====");
+    products.forEach(p => {
+      console.log(`Title: ${p.title} | Price: $${p.price} | Category: ${p.category}`);
+    });
+
+    // 2. Use map() to create a new array containing only title and price
+    const mappedProducts = products.map(p => ({ title: p.title, price: p.price }));
+    console.log("\n===== MAPPED PRODUCTS (Title & Price Only) =====");
+    console.log(mappedProducts);
+
+    // 3. Use filter() to find products with price greater than $100
+    const expensiveProducts = products.filter(p => p.price > 100);
+    console.log("\n===== PRODUCTS OVER $100 =====");
+    console.log(expensiveProducts);
+
+    // 4. Use find() to find the first product in the "electronics" category
+    const firstElectronic = products.find(p => p.category === 'electronics');
+    console.log("\n===== FIRST ELECTRONICS PRODUCT =====");
+    console.log(firstElectronic);
+
+    // 5. Use reduce() to calculate the total price
+    const totalPrice = products.reduce((sum, p) => sum + p.price, 0);
+    console.log(`\nTotal Price of All Products: $${totalPrice.toFixed(2)}`);
+
+    // 6. Use sort() to arrange products from highest price to lowest
+    const sortedProducts = [...products].sort((a, b) => b.price - a.price);
+    console.log("\n===== PRODUCTS SORTED BY PRICE (HIGHEST TO LOWEST) =====");
+    console.log(sortedProducts);
+  })
+  .catch(error => {
+    // Handle API errors
+    console.error("API Error encountered:", error.message);
+  })
+  .finally(() => {
+    // Completion message
+    console.log("\nOperation completed successfully.");
+  });
+
+
+//   Task 2 — Product Category Dashboard
+
+function generateDashboard(products) {
+  const totalProducts = products.length;
+
+  // Count categories using reduce
+  const categoryCounts = products.reduce((acc, p) => {
+    acc[p.category] = (acc[p.category] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Sort by price to easily find highest and lowest
+  const sortedByPrice = [...products].sort((a, b) => a.price - b.price);
+  const lowestPrice = sortedByPrice[0].price;
+  const highestPrice = sortedByPrice[sortedByPrice.length - 1].price;
+
+  // Calculate average using reduce
+  const totalPrice = products.reduce((sum, p) => sum + p.price, 0);
+  const averagePrice = totalPrice / totalProducts;
+
+  // Helper function to capitalize category names for the dashboard
+  const formatCategory = (str) => str.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+  // Output using Template Literals
+  console.log(`===== PRODUCT DASHBOARD =====
+
+Total Products: ${totalProducts}
+
+${Object.entries(categoryCounts).map(([cat, count]) => `${formatCategory(cat)}: ${count}`).join('\n')}
+
+Highest Price: $${highestPrice.toFixed(2)}
+Lowest Price: $${lowestPrice.toFixed(2)}
+Average Price: $${averagePrice.toFixed(2)}`);
 }
 
-//Switch Tasks
-// Task 26 — Traffic Light
+fetch(API_URL)
+  .then(res => res.json())
+  .then(data => generateDashboard(data))
+  .catch(err => console.error("Error loading dashboard:", err));
 
-let lightColor = prompt("Enter traffic light color (red/yellow/green):").toLowerCase();
 
-switch (lightColor) {
-    case "red":
-        console.log("Stop");
-        break;
-    case "yellow":
-        console.log("Ready");
-        break;
-    case "green":
-        console.log("Go");
-        break;
-    default:
-        console.log("Invalid color");
+//   Task 3 — User & Post API
+
+const USERS_API = 'https://jsonplaceholder.typicode.com/';
+const POSTS_API = 'https://jsonplaceholder.typicode.com/';
+
+// Fetch Users Data safely
+fetch(USERS_API)
+  .then(res => {
+    // If the server returns an HTML error page, stop here and throw an error
+    if (!res.ok) {
+      throw new Error(`Server returned status ${res.status}`);
+    }
+    
+    // Check if the content type is actually JSON
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new TypeError("Oops, we didn't get JSON from the server!");
+    }
+    
+    return res.json();
+  })
+  .then(users => {
+    console.log("===== USER NAMES =====");
+    users.forEach(u => console.log(u.name));
+
+    console.log("\n===== USER NAMES & EMAILS =====");
+    users.forEach(u => console.log(`${u.name} (${u.email})`));
+
+    console.log("\n===== FIND USER WITH ID 5 =====");
+    const user5 = users.find(u => u.id === 5);
+    console.log(user5);
+
+    console.log("\n===== FILTER USERS FROM CITY: 'Roscoeview' =====");
+    const targetCity = 'Roscoeview'; 
+    const filteredUsers = users.filter(u => u.address && u.address.city === targetCity);
+    console.log(filteredUsers);
+  })
+  .catch(err => {
+    // This will now catch the error cleanly without breaking your app
+    console.error("Users API Error handled:", err.message);
+  });
+
+
+
+//   Task 4 — API + Search
+
+function searchProducts() {
+  const categoryInput = prompt("Enter product category (e.g., electronics, jewelery, men's clothing, women's clothing):");
+  const maxPriceInput = parseFloat(prompt("Enter maximum price (e.g., 500):"));
+
+  if (!categoryInput || isNaN(maxPriceInput)) {
+    console.log("Invalid input provided.");
+    return;
+  }
+
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(products => {
+      // Clean up string input for a safer match
+      const targetCategory = categoryInput.trim().toLowerCase();
+
+      const matchedProducts = products.filter(p => {
+        return p.category.toLowerCase() === targetCategory && p.price <= maxPriceInput;
+      });
+
+      console.log(`\n===== RESULTS FOR: ${categoryInput} Under $${maxPriceInput} =====`);
+      if (matchedProducts.length === 0) {
+        console.log("No products match your criteria.");
+      } else {
+        matchedProducts.forEach(p => {
+          console.log(`- ${p.title} ($${p.price})`);
+        });
+      }
+    })
+    .catch(err => console.error("Search failed:", err));
 }
 
-//Task 27 — Day
+// Execute the search function
+searchProducts();
 
-let day = 1;
 
-switch (day) {
-    case 1: console.log("Monday"); break;
-    case 2: console.log("Tuesday"); break;
-    case 3: console.log("Wednesday"); break;
-    case 4: console.log("Thursday"); break;
-    case 5: console.log("Friday"); break;
-    case 6: console.log("Saturday"); break;
-    case 7: console.log("Sunday"); break;
-    default: console.log("Invalid day");
+// Task 5 — API Shopping Cart
+
+function startShoppingCart() {
+  fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(products => {
+      console.log("===== AVAILABLE PRODUCTS =====");
+      products.forEach(p => console.log(`ID: ${p.id} | ${p.title} - $${p.price}`));
+
+      const cart = [];
+      let shopping = true;
+
+      while (shopping) {
+        const input = prompt("Enter the ID of the product you want to add to your cart (or type 'checkout' to finish):");
+        
+        if (!input || input.toLowerCase() === 'checkout') {
+          shopping = false;
+        } else {
+          const productId = parseInt(input);
+          const foundProduct = products.find(p => p.id === productId);
+
+          if (foundProduct) {
+            cart.push(foundProduct);
+            console.log(`Added to cart: ${foundProduct.title}`);
+          } else {
+            alert("Invalid Product ID. Please try again.");
+          }
+        }
+      }
+
+      // Calculate initial total using reduce()
+      const rawTotal = cart.reduce((sum, item) => sum + item.price, 0);
+      
+      // Calculate discount tiers
+      let discountRate = 0;
+      if (rawTotal > 200) {
+        discountRate = 0.20; // 20%
+      } else if (rawTotal > 100) {
+        discountRate = 0.10; // 10%
+      }
+
+      const discountAmount = rawTotal * discountRate;
+      const finalAmount = rawTotal - discountAmount;
+
+      console.log("\n===== FINAL RECEIPT =====");
+      console.log(`Items in cart: ${cart.length}`);
+      console.log(`Subtotal: $${rawTotal.toFixed(2)}`);
+      console.log(`Discount Applied: ${discountRate * 100}% (-$${discountAmount.toFixed(2)})`);
+      console.log(`Final Amount: $${finalAmount.toFixed(2)}`);
+    })
+    .catch(err => console.error("Error managing shopping cart:", err));
 }
 
-//🏆 FINAL MINI PROJECT//
-//Task 28 — Student Result System//
-
-// Step 1 — Get user details
-let studentName = prompt("Enter Name:");
-let resultStudentAge = Number(prompt("Enter Age:"));
-let studentCity = prompt("Enter City:");
-
-// Step 2 — Get marks
-let tamil = Number(prompt("Enter Tamil Marks:"));
-let english = Number(prompt("Enter English Marks:"));
-let maths = Number(prompt("Enter Maths Marks:"));
-
-// Step 3 — Calculate
-let total = tamil + english + maths;
-let average = total / 3;
-
-// Step 4 — Check result (Grade)
-let grade;
-if (average >= 90) {
-    grade = "A";
-} else if (average >= 80) {
-    grade = "B";
-} else if (average >= 70) {
-    grade = "C";
-} else if (average >= 60) {
-    grade = "D";
-} else {
-    grade = "Fail";
-}
+// Start the shopping experience
+startShoppingCart();
 
 
-// Step 5 — Check voting
-let votingEligibility = studentAge >= 18 ? "Eligible" : "Not Eligible";
+// Task 6 — FakeStore Product Report
 
-// Step 6 — Display 
+const PRODUCT_REPORT_API_URL = 'https://fakestoreapi.com/products';
 
-console.log(`
-Name: ${studentName}
-Age: ${studentAge}
-City: ${studentCity}
-Total: ${total}
-Average: ${average.toFixed(2)}
-Grade: ${grade}
-Voting: ${votingEligibility}
-`);
+// 1. Fetch API
+fetch(PRODUCT_REPORT_API_URL)
+  // 2. Convert response using .json()
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(products => {
+    // Start generating the report data
+    const totalProducts = products.length;
 
+    // 4. Create product names array using map()
+    const productNames = products.map(p => p.title);
 
+    // 5. Filter expensive products (price > 100) using filter()
+    const expensiveProducts = products.filter(p => p.price > 100);
 
+    // 6. Find electronics product using find()
+    const electronicsProduct = products.find(p => p.category === 'electronics');
 
+    // 7. Calculate total price using reduce()
+    const totalPrice = products.reduce((sum, p) => sum + p.price, 0);
+
+    // 8. Check products using some() and every()
+    const hasProductAbove500 = products.some(p => p.price > 500);
+    const allProductsAbove1 = products.every(p => p.price > 1);
+
+    // 9. Sort from Highest price → lowest price
+    const sortedProducts = [...products].sort((a, b) => b.price - a.price);
+
+    // ===== PRINT EXPECTED FINAL OUTPUT =====
+    console.log("========== PRODUCT REPORT ==========\n");
+    
+    console.log(`Total Products: ${totalProducts}\n`);
+
+    // 3. Display all product names from the map array using forEach()
+    console.log("Product Names:");
+    productNames.forEach(name => console.log(`- ${name}`));
+    
+    console.log("\nProducts Above $100:");
+    expensiveProducts.forEach(p => console.log(`- ${p.title} ($${p.price})`));
+
+    console.log("\nElectronics Product:");
+    if (electronicsProduct) {
+      console.log(`- ${electronicsProduct.title} (Category: ${electronicsProduct.category})`);
+    } else {
+      console.log("- None found");
+    }
+
+    console.log(`\nTotal Product Value:\n$${totalPrice.toFixed(2)}\n`);
+
+    console.log(`Any Product Above $500:\n${hasProductAbove500}\n`);
+
+    console.log(`All Products Above $1:\n${allProductsAbove1}\n`);
+
+    console.log("Highest → Lowest:");
+    sortedProducts.forEach(p => console.log(`- $${p.price.toFixed(2)}: ${p.title}`));
+  })
+  // 10. Error handling using .catch()
+  .catch(error => {
+    console.error("An error occurred while fetching the report:", error.message);
+  })
+  // 10. Completion message using .finally()
+  .finally(() => {
+    console.log("\n====================================");
+    console.log("Product Report Generation Complete.");
+  });
 
 
